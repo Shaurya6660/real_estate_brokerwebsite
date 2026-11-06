@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b20">
+  <meta name="description" content="Explore sample Sunrise Homes property listings in Galaxy Mode.">
+  <title>Properties | Sunrise Homes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="properties.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sunrise Homes home">
+      <svg class="brand-mark" viewBox="0 0 70 54" aria-hidden="true">
+        <path d="M5 28 27 6 49 28V49H30V31H17V49H5Z" fill="none" stroke="#05c78b" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M25 28 45 8 66 29V49H49V29" fill="none" stroke="#f4f8ff" stroke-width="4" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-copy"><strong>Sunrise Homes</strong><small>BETTER HOMES. BRIGHTER FUTURES.</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="properties.html" aria-current="page">Properties</a>
+        <a class="nav-link" href="about Us.html">About Us</a>
+      <a class="nav-link" href="index.html#services">Services</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-link" href="tel:+919876543210">☎ <span>+91 98765 43210</span></a>
+      <a class="button button-outline" href="index.html#contact">✉ Enquiry</a>
+      <a class="button button-gradient" href="#search">Get Started <span aria-hidden="true">→</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      <div class="hero-copy">
+        <span class="eyebrow">✦ FIND YOUR NEXT CHAPTER</span>
+        <h1>Discover Your <span>Perfect Property</span></h1>
+        <p>Explore homes, modern apartments and luxury villas chosen to help you find a place that feels like yours.</p>
+        <div class="mini-stats">
+          <div><strong>12</strong><span>Sample listings</span></div>
+          <div><strong>3</strong><span>Property categories</span></div>
+          <div><strong>3</strong><span>City filters</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="listing-area" id="search">
+      <form class="filter-panel" id="filterForm">
+        <label class="keyword-field"><span>Search properties</span><input id="keyword" name="keyword" type="search" placeholder="Try “villa” or “Golden Ridge”"></label>
+        <label><span>Location</span><select id="locationFilter" name="location"><option value="">All locations</option><option>Chennai</option><option>Bangalore</option><option>Hyderabad</option></select></label>
+        <label><span>Property type</span><select id="typeFilter" name="type"><option value="">All types</option><option>Apartment</option><option>Villa</option><option>Independent House</option><option>Row House</option><option>Gated Community</option></select></label>
+        <label><span>Budget</span><select id="budgetFilter" name="budget"><option value="">Any budget</option><option value="under50">Under ₹50 Lakh</option><option value="50to80">₹50–80 Lakh</option><option value="80to100">₹80 Lakh–₹1 Crore</option><option value="over100">Above ₹1 Crore</option></select></label>
+        <button class="button button-gradient search-button" type="submit">⌕ Search Properties</button>
+        <button class="reset-button" type="reset" id="resetFilters">Reset filters</button>
+      </form>
+
+      <div class="results-bar">
+        <div><span class="section-kicker">CURATED PROPERTY COLLECTION</span><h2>Properties for you</h2></div>
+        <p id="resultsCount" aria-live="polite">12 properties found</p>
+      </div>
+      <div class="property-grid" id="propertyGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><span>✦</span><h3>No matching properties</h3><p>Try changing your filters to see more homes.</p><button class="button button-gradient" type="button" id="clearFilters">Clear filters</button></div>
+      <p class="demo-note">Demo listings for website preview only. Property names, prices, locations and features are illustrative; confirm real listing details before publishing.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="index.html">Sunrise Homes</a><span>© <span id="year"></span> Sunrise Homes. All rights reserved.</span><a href="#top" id="backToTop">Back to top ↑</a></footer>
+
+  <dialog class="property-dialog" id="propertyDialog" aria-labelledby="dialogTitle">
+    <button class="dialog-close" id="dialogClose" type="button" aria-label="Close details">×</button>
+    <img id="dialogImage" src="" alt="">
+    <div class="dialog-content"><span class="property-tag" id="dialogType"></span><h2 id="dialogTitle"></h2><p id="dialogLocation"></p><strong class="dialog-price" id="dialogPrice"></strong><p id="dialogDescription"></p><div class="dialog-features" id="dialogFeatures"></div><a class="button button-gradient" id="dialogEnquire" href="index.html#contact">Enquire about this property →</a></div>
+  </dialog>
+  <dialog class="property-dialog enquiry-dialog" id="enquiryDialog" aria-labelledby="enquiryTitle">
+    <button class="dialog-close" id="enquiryClose" type="button" aria-label="Close enquiry">×</button>
+    <div class="dialog-content"><span class="section-kicker">LET'S TALK PROPERTY</span><h2 id="enquiryTitle">Make an enquiry</h2><p id="enquiryPropertyName"></p>
+      <form id="enquiryForm" class="enquiry-form">
+        <label>Your name<input name="name" required placeholder="Full name"></label>
+        <label>Phone number<input name="phone" type="tel" required pattern="[0-9+() -]{8,18}" placeholder="+91..."></label>
+        <label>Message<textarea name="message" rows="3" placeholder="I'm interested in this property"></textarea></label>
+        <button class="button button-gradient" type="submit">Continue on WhatsApp →</button>
+      </form>
+      <p class="form-note">This demo opens WhatsApp with your enquiry. Replace the sample phone number in the code with the business number before launch.</p>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="properties.js"></script>
+</body>
+</html>

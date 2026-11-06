@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07142f"/><stop offset="1" stop-color="#102a56"/></linearGradient><linearGradient id="f" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#eef7ff"/><stop offset="1" stop-color="#dce7f5"/></linearGradient></defs>
+<rect width="800" height="500" fill="url(#g)"/>
+<circle cx="660" cy="95" r="45" fill="#8fe5ff" opacity=".25"/><circle cx="660" cy="95" r="25" fill="#d7f7ff" opacity=".3"/>
+<rect y="395" width="800" height="105" fill="#081a2a"/>
+<path d="M0 420 Q180 375 340 420 T800 415 V500 H0Z" fill="#0e3b31"/>
+<rect x="120" y="190" width="560" height="245" rx="10" fill="#dce7f5"/><polygon points="110,205 400,55 690,205" fill="#1e5b87"/><rect x="160" y="245" width="150" height="110" fill="#89ddff"/><rect x="490" y="245" width="150" height="110" fill="#89ddff"/><rect x="345" y="285" width="105" height="150" fill="#19c7ff"/><rect x="375" y="320" width="45" height="115" fill="#17304e"/>
+<rect x="70" y="365" width="660" height="10" rx="5" fill="#19c7ff" opacity=".7"/>
+<text x="400" y="465" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">Sunrise Heights</text>
+</svg>

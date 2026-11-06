@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Sunrise Homes</title>
+  <meta name="description"
+    content="Meet Sunrise Homes and discover a more personal approach to finding your next property.">
+
+  <style>
+    :root {
+      --bg: #070b1c;
+      --panel: #101731;
+      --text: #f4f7ff;
+      --muted: #aab5d0;
+      --blue: #62d5ff;
+      --purple: #a78bfa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(ellipse at 80% 10%,
+          #24205b 0%, transparent 35%),
+        radial-gradient(ellipse at 0% 60%,
+          #0d3150 0%, transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 28, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #ffffff18;
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.92rem;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue);
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid #ffffff35;
+      border-radius: 8px;
+      color: white;
+      padding: 8px 12px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #07101e;
+      background: linear-gradient(100deg,
+        var(--blue), #b7a0ff);
+      box-shadow: 0 0 25px #62d5ff30;
+    }
+
+    .btn-outline {
+      border: 1px solid #62d5ff75;
+      color: var(--blue);
+    }
+    .hero {
+      padding: 105px 0 75px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid #62d5ff50;
+      border-radius: 30px;
+      color: var(--blue);
+      background: #62d5ff0b;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      max-width: 850px;
+      margin: 0 auto 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg,
+        var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .story {
+      padding: 40px 0 90px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .broker-visual {
+      min-height: 420px;
+      border-radius: 24px;
+      border: 1px solid #ffffff20;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, transparent 45%, #070b1ce8),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=85")
+        center / cover;
+      box-shadow: 0 0 55px #7c6cff16;
+    }
+
+    .visual-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+    }
+
+    .visual-label h3 {
+      font-size: 1.5rem;
+    }
+
+    .visual-label p {
+      color: #d3ddf4;
+      font-size: 0.92rem;
+    }
+
+    .story-copy h2,
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 22px;
+    }
+
+    .story-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .values {
+      padding: 80px 0;
+      background: #ffffff04;
+      border-top: 1px solid #ffffff12;
+      border-bottom: 1px solid #ffffff12;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .value-card {
+      background: linear-gradient(145deg,
+        #131d3a, #0b1125);
+      border: 1px solid #ffffff15;
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: #62d5ff70;
+    }
+
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .cta {
+      padding: 85px 0;
+      text-align: center;
+    }
+
+    .cta-box {
+      padding: 55px 25px;
+      border-radius: 24px;
+      border: 1px solid #62d5ff35;
+      background: linear-gradient(130deg,
+        #142b4b, #211743);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      border-top: 1px solid #ffffff15;
+      padding: 25px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 8px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 4px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .broker-visual {
+        min-height: 320px;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">
+        SUNRISE<span> HOMES</span>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Toggle navigation">
+        ☰ Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="about.html" class="active" aria-current="page">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#contact" class="btn btn-primary">
+          Get Started
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="eyebrow">Who We Are</span>
+
+      <h1>
+        Your Property Journey.<br>
+        <span class="gradient-text">Our Commitment.</span>
+      </h1>
+
+      <p>
+        More than finding properties, we're here to help you
+        make confident decisions about the places where life
+        happens and futures are built.
+      </p>
+
+      <div class="hero-actions">
+        <a href="properties.html" class="btn btn-primary">
+          Explore Properties →
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">
+          Talk to Our Team
+        </a>
+      </div>
+    </section>
+
+    <section class="story container">
+      <div class="story-grid">
+        <div class="broker-visual" role="img"
+          aria-label="Real estate property and architecture">
+          <div class="visual-label">
+            <h3>Sunrise Homes</h3>
+            <p>Your goals. Your budget. Your next chapter.</p>
+          </div>
+        </div>
+
+        <div class="story-copy">
+          <span class="eyebrow">Our Story</span>
+          <h2>
+            More Than Property.
+            <span class="gradient-text">A Place to Call Home.</span>
+          </h2>
+
+          <p>
+            At Sunrise Homes, we believe that finding the right
+            property is about more than four walls — it is about
+            finding a place for your future.
+          </p>
+
+          <p>
+            Whether you're searching for your dream home, making
+            a smart investment, or looking for the perfect
+            commercial space, we're here to make your property
+            journey simpler, clearer, and more rewarding.
+          </p>
+
+          <p>
+            By understanding your needs, your budget, and your
+            preferred location, we help you explore suitable
+            opportunities with confidence. From your first
+            enquiry to your next important decision, our goal
+            is to offer personal attention, transparent
+            communication, and guidance you can rely on.
+          </p>
+
+          <p>
+            <strong>
+              Your goals come first, and your next chapter
+              starts here.
+            </strong>
+          </p>
+
+          <a href="contact.html" class="btn btn-outline">
+            Connect With Us →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">The Sunrise Difference</span>
+          <h2>Property Decisions, <span class="gradient-text">
+            Made Personal.</span></h2>
+          <p>
+            A better property experience begins with listening,
+            understanding, and putting your requirements first.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <div class="value-icon">⌖</div>
+            <h3>Location-Focused Search</h3>
+            <p>
+              Explore available properties in the areas that
+              matter to you, based on your needs and budget.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">◇</div>
+            <h3>Guidance That Matters</h3>
+            <p>
+              Get clear information about property options,
+              important questions, and the next steps to consider.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">✦</div>
+            <h3>A Personal Approach</h3>
+            <p>
+              Tell us what you're looking for so we can help
+              you narrow down suitable opportunities.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta container" id="enquiry">
+      <div class="cta-box">
+        <span class="eyebrow">Let's Find Your Next Property</span>
+        <h2>Every Great Move Starts With a Conversation.</h2>
+        <p>
+          Share your requirements with us and take the next
+          step towards finding a property that fits your goals.
+        </p>
+
+        <a href="properties.html" class="btn btn-primary">
+          Browse Properties
+        </a>
+
+        <a href="index.html#contact"
+           class="btn btn-outline"
+           style="margin-left: 8px;">
+          Send an Enquiry
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Sunrise Homes.
+      Built around your next move.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
