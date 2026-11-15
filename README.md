@@ -1,6 +1,6 @@
 # Sunrise Homes — Real Estate Broker Demo
 
-A ready-to-show real estate broker website built with **HTML, CSS and vanilla JavaScript only**.
+A ready-to-show real estate broker website built with **HTML, CSS and JavaScript only**.
 
 ## No TypeScript
 This project intentionally contains **no TypeScript** and requires no npm, Node.js or build step.
@@ -51,7 +51,7 @@ Just open `index.html` in a browser, or use VS Code Live Server.
 - Local property artwork, so the property page does not depend on missing image files
 - No TypeScript
 
-## Before selling to a broker
+
 
 Replace:
 - `Sunrise Homes`
@@ -68,6 +68,4 @@ The listings in this repository are demo data only.
 
 This is a frontend website. The enquiry flow currently opens WhatsApp; it does not create a private database of leads. A secure admin dashboard, login system, persistent lead database, online property management and analytics can be added later with a backend or managed service.
 
-## GitHub
 
-Upload the entire `real-estate-broker-demo` folder to a GitHub repository. Do not upload passwords, API keys or private customer information.
